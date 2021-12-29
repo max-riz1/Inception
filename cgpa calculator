@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+    int marks, count = 0;
+    int mark_rang[] = {80, 75, 70, 65, 60, 55, 50, 45, 40, 0};
+    float cgpa[] = {4, 3.75, 3.50, 3.25, 3, 2.75, 2.5, 2.25, 2, 0};
+    char *grade[] = {"A+", "A", "A-", "B+", "B", "B-", "C+", "C", "D", "F"};
+    printf("Enter your marks : ");
+    scanf("%d", &marks);
+    for (int i = 0; i < 10; i++)
+    {
+        if (marks >= mark_rang[i] && marks <= 100)
+            count++;
+        if (count == 1)
+        {
+            printf("\n\n    \tXYZ UNIVERSITY\nDepartment Of Computer Science And Engineering");
+            printf("\n\n Your marks is :%d\n your grade : %s \n Your CGPA : %.2f \n", marks, grade[i], cgpa[i]);
+            break;
+        }
+    }
+    if (count == 0)
+        printf("Enter valid markrs");
+    return 0;
+}
